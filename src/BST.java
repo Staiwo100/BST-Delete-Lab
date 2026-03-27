@@ -154,8 +154,10 @@ public class BST<E extends Comparable<E>> implements Tree<E> {
     }
 
     private void inorder(TreeNode<E> node) {
-        // TODO: implement inorder traversal (left -> visit -> right)
-        // Base case: if node is null, return.
+        if (root == null) return;
+        inorder(root.left);
+        System.out.print(root.element + " ");
+        inorder(root.right);
     }
 
     // ── Preorder traversal ────────────────────────────────────────────────
@@ -165,8 +167,10 @@ public class BST<E extends Comparable<E>> implements Tree<E> {
     }
 
     private void preorder(TreeNode<E> node) {
-        // TODO: implement preorder traversal (visit -> left -> right)
-        // Base case: if node is null, return.
+        if (root == null) return;
+        System.out.print(root.element + " ");
+        preorder(root.left);
+        preorder(root.right);
     }
 
     // ── Postorder traversal ───────────────────────────────────────────────
@@ -176,8 +180,10 @@ public class BST<E extends Comparable<E>> implements Tree<E> {
     }
 
     private void postorder(TreeNode<E> node) {
-        // TODO: implement postorder traversal (left -> right -> visit)
-        // Base case: if node is null, return.
+        if (root == null) return;
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.element + " ");
     }
 
     // ── Size and empty ────────────────────────────────────────────────────
